@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import TransitionProvider from "../providers/TransitionProvider";
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
       <body>
         <Navbar />
-        {children}
+        <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>
   );
